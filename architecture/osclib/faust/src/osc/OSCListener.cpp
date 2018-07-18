@@ -44,6 +44,7 @@ OSCListener::OSCListener(MessageProcessor* mp, int port)
 		: fSocket(0), fMsgHandler(mp), 
 		  fRunning(false), fSetDest(true), fPort(port)
 {
+cerr << ">>>>>>>>>>>>>>>>>>> OSCListener::OSCListener --- " << endl;
 	fSocket = new UdpListeningReceiveSocket(IpEndpointName(IpEndpointName::ANY_ADDRESS, fPort), this);
 	fPort = 0;
 	// check osc out destination address
